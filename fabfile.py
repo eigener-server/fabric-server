@@ -34,10 +34,10 @@ def update_repositories():
     env.run('apt-get update')
 
 def upgrade_repositories():
-    env.run('apt-get upgrade')
+    env.run('apt-get -y upgrade')
 
 def dist_upgrade_repositories():
-    env.run('apt-get dist-upgrade')
+    env.run('apt-get -y dist-upgrade')
 
 def change_config_file(filename, parameter, value, delimiter):
         sed(filename, 
