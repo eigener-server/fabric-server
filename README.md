@@ -5,13 +5,13 @@ https://github.com/eigener-server/docker-compose
 ```
 mkdir /srv/fabric
 cd /srv/fabric
-https://raw.githubusercontent.com/eigener-server/fabric-server/master/fabfile.py
+wget https://raw.githubusercontent.com/eigener-server/fabric-server/master/fabfile.py
 ```
 ```
 vi fabfile.py # Change Server IP, Your eMail Address, Your Domain, ...
 ```
 ```
-fab -H demo@150.60.70.80 --password gdgwdbchwenZZGSZW67689 remote new_server
+fab -H root@150.60.70.80 --password nZZGSZW67689 remote new_server
 fab -H demo@150.60.70.80 --password gdgwdbchwenZZGSZW67689 remote_sudo new_server_root_password
 fab -H demo@150.60.70.80 --password gdgwdbchwenZZGSZW67689 remote_sudo docker
 fab -H demo@150.60.70.80 --password gdgwdbchwenZZGSZW67689 remote_sudo docker_compose
