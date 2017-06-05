@@ -77,6 +77,8 @@ def apt_exim4():
     change_config_file('/etc/exim4/update-exim4.conf.conf', 'dc_eximconfig_configtype', 'satellite', '=')
     change_config_file('/etc/exim4/update-exim4.conf.conf', 'dc_other_hostnames', '\'\'', '=')
     env.run('update-exim4.conf')
+    env.run('chfn -f "' + outgoing_mail_server_name + '" root')
+    env.run('chfn -f "' + outgoing_mail_server_name + '" ' + new_user )
     env.run('service exim4 restart')
 
 def geoip_iptables():
