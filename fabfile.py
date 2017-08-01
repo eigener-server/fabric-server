@@ -58,7 +58,8 @@ def apt_cron():
 def apt_exim4():
     env.run('echo "exim4-config    exim4/mailname  string  ' + outgoing_mail_server_name + '" | debconf-set-selections')
     env.run('echo "exim4-config    exim4/dc_eximconfig_configtype  select  mail sent by smarthost; no local mail" | debconf-set-selections')
-    env.run('echo "exim4-config    exim4/dc_local_interfaces       string  127.0.0.1 ; ::1" | debconf-set-selections')
+    env.run('echo "exim4-config    exim4/dc_local_interfaces       string  127.0.0.1" | debconf-set-selections')
+    #env.run('echo "exim4-config    exim4/dc_local_interfaces       string  127.0.0.1.26" | debconf-set-selections')
     env.run('echo "exim4-config    exim4/dc_other_hostnames        string" | debconf-set-selections')
     env.run('echo "exim4-config    exim4/dc_relay_domains  string" | debconf-set-selections')
     env.run('echo "exim4-config    exim4/dc_relay_nets     string" | debconf-set-selections')
